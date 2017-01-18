@@ -1,0 +1,14 @@
+<hr>
+<div class="media" *ngFor="#post of tweets, #i=index">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" [src]="post.imgUrl" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{ post.name }}</h4><span class="tweet-handle">{{ post.tweetHandle }}</span>
+    <p>{{ post.text }}</p>
+    <i class="glyphicon glyphicon-heart like-btn" [class.voted]="post.voted" (click)="onVote(i)"></i><span>{{ post.voteCount }}</span>
+  </div>
+  <hr>
+</div>
